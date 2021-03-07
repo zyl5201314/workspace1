@@ -48,6 +48,7 @@ public class UserController {
         System.out.println("你好");
         System.out.println("你好2");
         System.out.println("你好21111");
+        System.out.println("你好21111");
        List<User> list= userService.queryUserList();
        model.addAttribute("list",list);
        return "showUser";
