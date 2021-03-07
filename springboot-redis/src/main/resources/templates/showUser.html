@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="@{toAdd}">新增</a>
+    <input type="button" id="delsUser" value="批量删除">
+    <table border="1">
+        <tr>
+            <td><input type="checkbox"  id="checkUserId"/></td>
+            <td>用户id</td>
+            <td>用户名</td>
+            <td>用户性别</td>
+            <td>生日</td>
+            <td>工资</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="user:${list}">
+            <td ><input type="checkbox" th:value="${user.userid}" name="userid"></td>
+            <td th:text="${user.userid}">用户id</td>
+            <td th:text="${user.username}">用户名</td>
+            <td th:text="${user.usersex==1?'男':'女'}">用户性别</td>
+            <td th:text="${user.userdate}">生日</td>
+            <td th:text="${user.userprice}">工资</td>
+            <td>
+                <a th:href="@{delUser(userid=${user.userid})}">删除</a>
+                <a th:href="@{toUpdateUser(userid=${user.userid})}">修改</a>
+
+            </td>
+
+        </tr>
+        
+    </table>
+</body>
+<script>
+//    $(function () {
+//
+//    })
+    $("#checkUserId").on('click',function () {
+      var check= $(this).prop("checked");
+       $("input[name='userid']").each(function (i) {
+           $(this).prop("checked",check);
+       })
+    })
+
+    $("#delsUser").click(function () {
+        var ids="";
+        $("input[name='userid']").each(function (i) {
+           if($(this).prop("checked")){
+                ids+=","+$(this).val();
+           }
+        })
+        var idss=ids.substring(1);
+        location.href="/delsUser?ids="+idss;
+    })
+
+</script>
+</html>

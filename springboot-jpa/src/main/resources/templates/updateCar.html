@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/updateCar" method="post">
+        <input type="hidden" name="carId" th:value="${car.carId}">
+       name :<input type="text" name="carName" th:value="${car.carName}" ><br>
+       price: <input type="text" name="carPrice" th:value="${car.carPrice}"><br>
+        date: <input type="date" name="carDate" th:value="${car.carDate}" ><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

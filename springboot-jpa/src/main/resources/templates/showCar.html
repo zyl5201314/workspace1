@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/toAddCar">新增</a>
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>price</td>
+        <td>date</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="car:${list}">
+        <td th:text="${car.carId}"></td>
+        <td th:text="${car.carName}"></td>
+        <td th:text="${car.carPrice}"></td>
+        <td th:text="${car.carDate}"></td>
+        <td>
+            <a th:href="@{/delCar(carid=${car.carId})}">删除</a>
+            <a th:href="@{/toUpdateCar(carid=${car.carId})}">修改</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
