@@ -47,6 +47,7 @@ public class UserController {
     public String queryUserList(Model model){
         System.out.println("你好");
         System.out.println("你好2");
+          System.out.println("你好3");
         System.out.println("你好21111");
         System.out.println("你好21111");
        List<User> list= userService.queryUserList();
