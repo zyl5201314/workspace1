@@ -45,6 +45,7 @@ public class UserController {
      */
     @RequestMapping("queryUserList")
     public String queryUserList(Model model){
+        System.out.println("你好");
        List<User> list= userService.queryUserList();
        model.addAttribute("list",list);
        return "showUser";
