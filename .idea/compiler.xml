@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot" />
+        <module name="springboot-demo" />
+        <module name="springboot-jpa" />
+        <module name="springboot-redis" />
+        <module name="workspace" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="springboot" target="1.8" />
+      <module name="springboot-demo" target="1.8" />
+      <module name="springboot-jpa" target="1.8" />
+      <module name="springboot-redis" target="1.8" />
+      <module name="workspace" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
