@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/updateUser}" method="post">
+        <input type="hidden" name="userid" th:value="${u.userid}">
+     用户名：<input type="text" th:value="${u.username}" name="username"/><br/>
+     性别：<input type="radio" th:checked="${u.usersex==0}" value="0" name="usersex"/>女
+        <input type="radio" th:checked="${u.usersex==1}" th:if="${u.usersex==1?'checked':''}" value="1" name="usersex"/>男<br/>
+     时间:<input type="date" th:value="${u.userdate}" name="userdate"/><br>
+     价格：<input type="number" th:value="${u.userprice}" name="userprice"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
